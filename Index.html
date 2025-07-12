@@ -1,0 +1,66 @@
+
+        /* Pseudo-element for the swaying tree background */
+
+        #tree-container::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-image: url('https://i.postimg.cc/kGRwQkp5/1752254416139.png'); /* The tree image */
+
+            background-size: contain;
+
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+            /* Adjust transform-origin to simulate branches swaying from higher up the trunk */
+
+            transform-origin: 50% 80%; /* Pivot point higher up the image */
+
+            animation: sway 15s ease-in-out infinite alternate; /* Very slow sway animation */
+
+            z-index: 0; /* Place behind the lines and headshots */
+
+        }
+
+        @keyframes sway {
+
+            0% { transform: rotateZ(-1deg); } /* Subtle left sway */
+
+            100% { transform: rotateZ(1deg); } /* Subtle right sway */
+
+        }
+
+        /* Styles for the pioneer headshots (buttons) */
+
+        .pioneer-headshot {
+
+            width: 75px; /* Default enlarged size */
+
+            height: 75px; /* Default enlarged size */
+
+            border-radius: 50%; /* Make it circular */
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+            cursor: pointer;
+
+            border: 3px solid #fff; /* White border */
+
+            position: absolute; /* Absolute positioning on the tree */
+
+            display: flex;
